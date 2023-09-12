@@ -1,0 +1,8 @@
+pandas
+sqlalchemy
+pymysql
+cryptography
+Faker
+mysql-connector-python
+mysqlclient
+python-dotenv
