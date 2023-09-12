@@ -1,16 +1,21 @@
+import os
+from dotenv import load_dotenv
 import mysql.connector
 from faker import Faker
 import random
 import string
 import time
 
+# Load environment variables
+load_dotenv()
+
 # Database connection details
-username = 'doadmin'
-password = 'AVNS_09AYyWLmRSksoqMYzTK'
-host = 'db-mysql-nyc1-53719-do-user-2491287-0.b.db.ondigitalocean.com'
-port = 25060
-database = 'flightdatabase'
-sslmode = 'REQUIRED'
+username = os.getenv('DB_USERNAME')
+password = os.getenv('DB_PASSWORD')
+host = os.getenv('DB_HOST')
+port = os.getenv('DB_PORT')
+database = os.getenv('DB_NAME')
+sslmode = os.getenv('DB_SSLMODE')
 
 # Connect to the MySQL server (without specifying the database)
 cnx = mysql.connector.connect(user=username, password=password, host=host, port=port)
